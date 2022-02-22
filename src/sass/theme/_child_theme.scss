@@ -497,3 +497,109 @@ h1, h2, h3, h4 {
     margin: 0 auto;
   }
 }
+
+
+.terpene {
+  &__container {
+    background-color: $grey-light;
+    padding: 3em 0;
+    > .container {
+      max-width: $bp--xl;
+      margin: 0 auto;
+    }
+  }
+
+  &__screens {
+    margin-top: 2em;
+    &__screen {
+      display: flex;
+      min-height: 400px;
+      border: 2px solid $yellow;
+
+      .screen {
+        &__title {
+          flex: 1;
+          background-color: white;
+
+          img {
+            max-width: 150px;
+          }
+        }
+        &__icon {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        &__info {
+          flex: 3;
+          background-size: cover;
+          padding: 3em;
+
+          h3, h2 {
+            color: white;
+          }
+        }
+
+        &__block {
+          background-color: $primary;
+          padding: 2em;
+          color: white;
+          width: fit-content;
+          min-width: 350px;
+          font-family: LetsgobrandonRegular;
+          margin-top: 1em;
+        }
+      }
+    }
+
+  }
+
+  &__icons {
+    display: grid;
+    margin-top: 2em;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      text-decoration: none;
+      align-items: center;
+    }
+    img {
+      max-width: 150px;
+    }
+  }
+
+  &__effects {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    &__button {
+      text-align: center;
+      text-decoration: none;
+      color: white;
+      padding: 1.2em .1em;
+      letter-spacing: 1px;
+      font-size: .9em;
+      &:hover {
+        color: white;
+      }
+      background-color: $grey;
+      &.active {
+        &:nth-child(1) {
+          background-color: $primary;
+        }
+        &:nth-child(2) {
+          background-color: $blue--darkest;
+        }
+        &:nth-child(3) {
+          background-color: $purple;
+        }
+      }
+
+    }
+  }
+
+}

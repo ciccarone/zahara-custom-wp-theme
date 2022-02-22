@@ -8,7 +8,7 @@
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
+  --bs-purple: #700044;
   --bs-pink: #d63384;
   --bs-red: #dc3545;
   --bs-orange: #fd7e14;
@@ -16045,6 +16045,96 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   margin: 0 auto;
 }
 
+.terpene__container {
+  background-color: #ebebeb;
+  padding: 3em 0;
+}
+.terpene__container > .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.terpene__screens {
+  margin-top: 2em;
+}
+.terpene__screens__screen {
+  display: flex;
+  min-height: 400px;
+  border: 2px solid #d1d1ad;
+}
+.terpene__screens__screen .screen__title {
+  flex: 1;
+  background-color: white;
+}
+.terpene__screens__screen .screen__title img {
+  max-width: 150px;
+}
+.terpene__screens__screen .screen__icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.terpene__screens__screen .screen__info {
+  flex: 3;
+  background-size: cover;
+  padding: 3em;
+}
+.terpene__screens__screen .screen__info h3, .terpene__screens__screen .screen__info .h3, .terpene__screens__screen .screen__info h2, .terpene__screens__screen .screen__info .h2 {
+  color: white;
+}
+.terpene__screens__screen .screen__block {
+  background-color: #317373;
+  padding: 2em;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 350px;
+  font-family: LetsgobrandonRegular;
+  margin-top: 1em;
+}
+.terpene__icons {
+  display: grid;
+  margin-top: 2em;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+.terpene__icons__icon {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-decoration: none;
+  align-items: center;
+}
+.terpene__icons img {
+  max-width: 150px;
+}
+.terpene__effects {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+}
+.terpene__effects__button {
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  padding: 1.2em 0.1em;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  background-color: #ccc;
+}
+.terpene__effects__button:hover {
+  color: white;
+}
+.terpene__effects__button.active:nth-child(1) {
+  background-color: #317373;
+}
+.terpene__effects__button.active:nth-child(2) {
+  background-color: #2d4b58;
+}
+.terpene__effects__button.active:nth-child(3) {
+  background-color: #700044;
+}
+
 .has-blue-color,
 .has-blue-color:visited {
   color: #0d6efd;
@@ -16067,12 +16157,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 
 .has-purple-color,
 .has-purple-color:visited {
-  color: #6f42c1;
+  color: #700044;
 }
 
 .has-purple-background-color {
-  background-color: #6f42c1;
-  border-color: #6f42c1;
+  background-color: #700044;
+  border-color: #700044;
 }
 
 .has-pink-color,

@@ -9329,6 +9329,33 @@
 	      }]
 	    });
 	  });
+
+	  if ($('.terpene__effects__button').length > 0) {
+	    $('.terpene__effects__button').click(function (e) {
+	      e.preventDefault();
+	      $('.terpene__effects__button').each(function () {
+	        $(this).removeClass('active');
+	        $(this).addClass('inactive');
+	      });
+	      $(this).addClass('active');
+	      $(this).removeClass('inactive');
+	      $('.terpene__icons__icon').each(function () {
+	        $(this).hide();
+	      });
+	      $('.terpene__screens__screen').each(function () {
+	        $(this).hide();
+	      });
+	      $('.terpene__icons__icon[data-effect="' + $(this).attr('id') + '"]').show();
+	    }); // $('.terpene__effects__button:first-child').click();
+
+	    $('.terpene__icons__icon').click(function (z) {
+	      z.preventDefault();
+	      $('.terpene__screens__screen').each(function () {
+	        $(this).hide();
+	      });
+	      $('.terpene__screens__screen[data-screen="' + $(this).data('screens') + '"]').show();
+	    });
+	  }
 	});
 
 	exports.Alert = alert;

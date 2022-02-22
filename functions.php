@@ -239,3 +239,77 @@ function bubbles( $atts, $content = null )
 }
 
 add_shortcode('bubbles', 'bubbles');
+
+function terpenes()
+{
+	$taxonomy = 'effects';
+	$taxonomy_terms = get_terms( $taxonomy, array(
+	    'hide_empty' => 0,
+	) );
+
+	$ret = '<div class="terpene__effects">';
+	foreach ($taxonomy_terms as $effect) {
+		$ret .= '<a class="terpene__effects__button active" href="#" id="'.$effect->term_id.'">'.$effect->name.'</a>';
+	}
+	$ret .= '</div>';
+
+
+	$ret .= '<div class="terpene__icons">';
+	$args = array(
+      'post_type' => 'terpenes',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+      'orderby' => 'title',
+      'order' => 'ASC',
+  );
+	$loop = new WP_Query( $args );
+	while ( $loop->have_posts() ) : $loop->the_post();
+		$effects = wp_get_post_terms( get_the_ID(), array( 'effects' ) );
+		$ret .= '<a class="terpene__icons__icon" href="#" data-screens="'.get_the_ID().'" data-effect="'.$effects[0]->term_id.'"><img src="'.get_field('terpene_icon')['url'].'" />'.get_the_title().'</a>';
+	endwhile;
+	$ret .= '</div>';
+
+
+	$ret .= '<div class="terpene__screens">';
+	$args = array(
+      'post_type' => 'terpenes',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+      'orderby' => 'title',
+      'order' => 'ASC',
+  );
+	$loop = new WP_Query( $args );
+	while ( $loop->have_posts() ) : $loop->the_post();
+		$ret .= '<div class="terpene__screens__screen" style="display: none" data-screen="'.get_the_ID().'">';
+			$ret .= '<div class="screen__title">';
+				$ret .= '<div class="screen__icon"><img src="'.get_field('terpene_icon')['url'].'" />'.get_the_title().'</div>';
+			$ret .= '</div>';
+			$ret .= '<div class="screen__info" style="background-image: url('.get_the_post_thumbnail_url().')">';
+				$ret .= '<h3>aroma:</h3>';
+				$ret .= '<h2>'.get_field('terpene_aroma').'</h2>';
+
+				$ret .= '<div class="screen__block">';
+					if ($help = get_field('terpene_known_to_help_with')) {
+						$ret .= "KNOWN TO HELP WITH<br />";
+						$ret .= $help;
+					}
+					if ($help = get_field('terpene_believed_to_promote')) {
+						$ret .= "BELIEVED TO PROMOTE<br />";
+						$ret .= $help;
+					}
+					if ($help = get_field('turpene_may_offer')) {
+						$ret .= "MAY OFFER<br />";
+						$ret .= $help;
+					}
+				$ret .= '</div>';
+			$ret .= '</div>';
+		$ret .= '</div>';
+	endwhile;
+	$ret .= '</div>';
+
+	return $ret;
+
+
+}
+
+add_shortcode('terpenes', 'terpenes');
