@@ -23,6 +23,10 @@ function understrap_remove_scripts() {
 add_action( 'wp_enqueue_scripts', 'understrap_remove_scripts', 20 );
 
 
+function zahara_footer_nav() {
+  register_nav_menu('footer-nav',__( 'Footer Nav' ));
+}
+add_action( 'init', 'zahara_footer_nav' );
 
 /**
  * Enqueue our stylesheet and javascript file
@@ -47,6 +51,7 @@ function theme_enqueue_styles() {
 	wp_enqueue_script( 'slick-script', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', $the_theme->get( 'Version' ), true );
 	wp_enqueue_style( 'slick-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css', array(), $the_theme->get( 'Version' ) );
 	wp_enqueue_style( 'slick-theme', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css', array(), $the_theme->get( 'Version' ) );
+	wp_enqueue_style( 'animate-style', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', array(), $the_theme->get( 'Version' ) );
 }
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
@@ -270,7 +275,7 @@ function terpenes()
 	$ret .= '</div>';
 
 
-	$ret .= '<div class="terpene__screens">';
+	$ret .= '<a name="screens-anchor"></a><div class="terpene__screens">';
 	$args = array(
       'post_type' => 'terpenes',
       'post_status' => 'publish',
@@ -285,9 +290,10 @@ function terpenes()
 				$ret .= '<div class="screen__icon"><img src="'.get_field('terpene_icon')['url'].'" />'.get_the_title().'</div>';
 			$ret .= '</div>';
 			$ret .= '<div class="screen__info" style="background-image: url('.get_the_post_thumbnail_url().')">';
-				$ret .= '<h3>aroma:</h3>';
-				$ret .= '<h2>'.get_field('terpene_aroma').'</h2>';
-
+				$ret .= '<div class="screen__data">';
+					$ret .= '<h3>aroma:</h3>';
+					$ret .= '<h2>'.get_field('terpene_aroma').'</h2>';
+				$ret .= '</div>';
 				$ret .= '<div class="screen__block">';
 					if ($help = get_field('terpene_known_to_help_with')) {
 						$ret .= "KNOWN TO HELP WITH<br />";
@@ -313,3 +319,35 @@ function terpenes()
 }
 
 add_shortcode('terpenes', 'terpenes');
+
+function ways_to_consume()
+{
+	$args = array(
+      'post_type' => 'ways_to_consume',
+      'post_status' => 'publish',
+      'posts_per_page' => -1,
+      'orderby' => 'title',
+      'order' => 'ASC',
+  );
+	$loop = new WP_Query( $args );
+
+	$ret = '<div class="full-slider">';
+	while ( $loop->have_posts() ) : $loop->the_post();
+		$ret .= '<div class="full-slider__item" style="background-image: url('.get_the_post_thumbnail_url().')">';
+			$ret .= '<div class="full-slider__inner">';
+				$ret .= '<div class="full-slider__title">';
+					$ret .= '<h4>WAYS TO CONSUME</h4>';
+				$ret .= '</div>';
+				$ret .= '<div class="full-slider__info">';
+					$ret .= '<h5>'.get_the_title().'</h5>';
+					$ret .= get_the_content();
+				$ret .= '</div>';
+			$ret .= '</div>';
+		$ret .= '</div>';
+	endwhile;
+	$ret .= '</div>';
+
+	return $ret;
+}
+
+add_shortcode('ways_to_consume', 'ways_to_consume');

@@ -93,6 +93,9 @@ h1, h2, h3, h4 {
 
     svg {
       width: 300px;
+      @media (max-width: $bp--md) {
+        width: 150px;
+      }
     }
   }
   padding-top: .5em;
@@ -101,6 +104,9 @@ h1, h2, h3, h4 {
 
     &--large {
       min-height: 95vh;
+      @media (max-width: $bp--md) {
+        min-height: 82vh;
+      }
     }
   }
 
@@ -108,6 +114,9 @@ h1, h2, h3, h4 {
 
     &--small {
       min-height: 75vh;
+      @media (max-width: $bp--md) {
+        min-height: 32vh;
+      }
     }
   }
 
@@ -222,6 +231,8 @@ h1, h2, h3, h4 {
 
     .slick-slide {
       padding: 1em;
+      display: flex !important;
+      justify-content: center;
     }
   }
 }
@@ -320,6 +331,9 @@ h1, h2, h3, h4 {
   @media (max-width: $bp--md) {
     padding: 2em;
   }
+  a {
+    color: white;
+  }
   p {
     text-align: center;
   }
@@ -372,12 +386,16 @@ h1, h2, h3, h4 {
     }
   }
 
-  .menu {
+  .custom-menu-class {
     display: flex;
     justify-content: center;
     ul {
       list-style: none;
       padding-left: 0;
+      @media (max-width: $bp--md) {
+        display: flex;
+        flex-direction: column;
+      }
     }
     li {
       text-align: center;
@@ -500,6 +518,19 @@ h1, h2, h3, h4 {
 
 
 .terpene {
+
+  &__intro {
+    background-color: $grey-light;
+    padding: 2em 3em 1em;
+    text-align: center;
+    > .container {
+      margin: 0 auto !important;
+    }
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+  }
   &__container {
     background-color: $grey-light;
     padding: 3em 0;
@@ -515,6 +546,9 @@ h1, h2, h3, h4 {
       display: flex;
       min-height: 400px;
       border: 2px solid $yellow;
+      @media (max-width: $bp--md) {
+        flex-direction: column;
+      }
 
       .screen {
         &__title {
@@ -530,11 +564,21 @@ h1, h2, h3, h4 {
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          @media (max-width: $bp--md) {
+            margin-bottom: 2em;
+          }
         }
         &__info {
           flex: 3;
           background-size: cover;
           padding: 3em;
+          @media (max-width: $bp--md) {
+            padding: .5em;
+            min-height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+          }
 
           h3, h2 {
             color: white;
@@ -546,7 +590,10 @@ h1, h2, h3, h4 {
           padding: 2em;
           color: white;
           width: fit-content;
-          min-width: 350px;
+          @media (min-width: $bp--md) {
+            min-width: 350px;
+          }
+
           font-family: LetsgobrandonRegular;
           margin-top: 1em;
         }
@@ -559,22 +606,32 @@ h1, h2, h3, h4 {
     display: grid;
     margin-top: 2em;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
+    @media (max-width: $bp--md) {
+      grid-template-columns: 1fr 1fr;
+    }
     &__icon {
       display: flex;
       justify-content: center;
       flex-direction: column;
       text-decoration: none;
       align-items: center;
+      text-align: center;
     }
     img {
       max-width: 150px;
+      @media (max-width: $bp--md) {
+        max-width: 100px;
+      }
     }
   }
 
   &__effects {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    @media (max-width: $bp--md) {
+      grid-template-columns: 1fr;
+      padding: 1em;
+    }
     grid-gap: 10px;
     &__button {
       text-align: center;
@@ -602,4 +659,67 @@ h1, h2, h3, h4 {
     }
   }
 
+}
+
+.full-slider {
+
+  width: 100%;
+
+  &__item {
+    min-height: 600px !important;
+    display: flex !important;
+    align-items: center;
+
+  }
+
+  &__inner {
+    max-width: $bp--xl;
+    margin: 0 auto;
+    padding: 2em;
+    @media (max-width: $bp--md) {
+      flex-direction: column;
+    }
+
+    display: flex;
+
+    > div {
+      flex: 1;
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    h4 {
+      color: white;
+      font-size: 2em;
+    }
+
+  }
+
+  &__info {
+    color: white;
+    text-align: center;
+  }
+}
+
+.slick-dots {
+  margin-top: 32px;
+}
+
+.custom-slick-dots {
+  color: $grey;
+}
+
+.slick-active {
+  .custom-slick-dots {
+    color: $primary;
+  }
+}
+
+.slick-list {
+  margin-bottom: 16px !important;
 }

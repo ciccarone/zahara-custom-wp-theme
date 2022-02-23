@@ -15688,11 +15688,26 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .header__brand svg {
   width: 300px;
 }
+@media (max-width: 768px) {
+  .header__brand svg {
+    width: 150px;
+  }
+}
 .header__size--large {
   min-height: 95vh;
 }
+@media (max-width: 768px) {
+  .header__size--large {
+    min-height: 82vh;
+  }
+}
 .header__size--small {
   min-height: 75vh;
+}
+@media (max-width: 768px) {
+  .header__size--small {
+    min-height: 32vh;
+  }
 }
 .header__cta {
   position: absolute;
@@ -15794,6 +15809,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 .slider--brands .slick-slide {
   padding: 1em;
+  display: flex !important;
+  justify-content: center;
 }
 
 .padded .col-inner, .padded img {
@@ -15881,6 +15898,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     padding: 2em;
   }
 }
+.site-footer a {
+  color: white;
+}
 .site-footer p {
   text-align: center;
 }
@@ -15933,19 +15953,25 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .site-footer__cta p {
   margin-bottom: 0;
 }
-.site-footer .menu {
+.site-footer .custom-menu-class {
   display: flex;
   justify-content: center;
 }
-.site-footer .menu ul {
+.site-footer .custom-menu-class ul {
   list-style: none;
   padding-left: 0;
 }
-.site-footer .menu li {
+@media (max-width: 768px) {
+  .site-footer .custom-menu-class ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.site-footer .custom-menu-class li {
   text-align: center;
   float: left;
 }
-.site-footer .menu a {
+.site-footer .custom-menu-class a {
   color: white;
   text-decoration: none;
   padding: 0.7em;
@@ -16045,6 +16071,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   margin: 0 auto;
 }
 
+.terpene__intro {
+  background-color: #ebebeb;
+  padding: 2em 3em 1em;
+  text-align: center;
+}
+.terpene__intro > .container {
+  margin: 0 auto !important;
+}
+.terpene__intro h2, .terpene__intro .h2 {
+  width: 100%;
+  text-align: center;
+}
 .terpene__container {
   background-color: #ebebeb;
   padding: 3em 0;
@@ -16061,6 +16099,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   min-height: 400px;
   border: 2px solid #d1d1ad;
 }
+@media (max-width: 768px) {
+  .terpene__screens__screen {
+    flex-direction: column;
+  }
+}
 .terpene__screens__screen .screen__title {
   flex: 1;
   background-color: white;
@@ -16074,10 +16117,24 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .terpene__screens__screen .screen__icon {
+    margin-bottom: 2em;
+  }
+}
 .terpene__screens__screen .screen__info {
   flex: 3;
   background-size: cover;
   padding: 3em;
+}
+@media (max-width: 768px) {
+  .terpene__screens__screen .screen__info {
+    padding: 0.5em;
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
 .terpene__screens__screen .screen__info h3, .terpene__screens__screen .screen__info .h3, .terpene__screens__screen .screen__info h2, .terpene__screens__screen .screen__info .h2 {
   color: white;
@@ -16089,14 +16146,23 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  min-width: 350px;
   font-family: LetsgobrandonRegular;
   margin-top: 1em;
+}
+@media (min-width: 768px) {
+  .terpene__screens__screen .screen__block {
+    min-width: 350px;
+  }
 }
 .terpene__icons {
   display: grid;
   margin-top: 2em;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+@media (max-width: 768px) {
+  .terpene__icons {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .terpene__icons__icon {
   display: flex;
@@ -16104,14 +16170,26 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   flex-direction: column;
   text-decoration: none;
   align-items: center;
+  text-align: center;
 }
 .terpene__icons img {
   max-width: 150px;
+}
+@media (max-width: 768px) {
+  .terpene__icons img {
+    max-width: 100px;
+  }
 }
 .terpene__effects {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 10px;
+}
+@media (max-width: 768px) {
+  .terpene__effects {
+    grid-template-columns: 1fr;
+    padding: 1em;
+  }
 }
 .terpene__effects__button {
   text-align: center;
@@ -16133,6 +16211,59 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 .terpene__effects__button.active:nth-child(3) {
   background-color: #700044;
+}
+
+.full-slider {
+  width: 100%;
+}
+.full-slider__item {
+  min-height: 600px !important;
+  display: flex !important;
+  align-items: center;
+}
+.full-slider__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2em;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .full-slider__inner {
+    flex-direction: column;
+  }
+}
+.full-slider__inner > div {
+  flex: 1;
+}
+.full-slider__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.full-slider__title h4, .full-slider__title .h4 {
+  color: white;
+  font-size: 2em;
+}
+.full-slider__info {
+  color: white;
+  text-align: center;
+}
+
+.slick-dots {
+  margin-top: 32px;
+}
+
+.custom-slick-dots {
+  color: #ccc;
+}
+
+.slick-active .custom-slick-dots {
+  color: #317373;
+}
+
+.slick-list {
+  margin-bottom: 16px !important;
 }
 
 .has-blue-color,
