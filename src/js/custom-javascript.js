@@ -3,6 +3,36 @@
 jQuery(document).ready(function( $ ) {
   $(document).ready(function(){
 
+    $(function() {
+        //caches a jQuery object containing the header element
+        var header = $(".header__brand");
+        $(window).scroll(function() {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 100) {
+                header.removeClass('header__brand--sticky').addClass("header__brand--sticky");
+            } else {
+                header.removeClass("header__brand--sticky").addClass('header__brand--sticky');
+            }
+        });
+    });
+
+    $('.role__button a').click(function(e){
+      e.preventDefault();
+      var this_btn = $(this);
+
+      this_btn.toggleClass('opened');
+      this_btn.addClass('dark');
+      this_btn.text('READ MORE');
+
+      if (this_btn.hasClass('opened')) {
+        this_btn.toggleClass('dark');
+        this_btn.text('CLOSE');
+      }
+
+      $('.role__responsibilities[data-res="'+$(this).attr('id')+'"]').toggle();
+    });
+
     function scrollToAnchor(aid){
         var aTag = $("a[name='"+ aid +"']");
         $('html,body').animate({scrollTop: aTag.offset().top},'fast');

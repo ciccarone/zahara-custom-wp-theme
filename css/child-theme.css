@@ -15638,27 +15638,35 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .btn, .wpcf7 input[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.button, .woocommerce-info a.button {
+  text-transform: uppercase;
   border-radius: 0;
   transition: 0.4s ease-in-out 0.1s;
+  font-family: Letsgobrandon;
 }
 .btn.outline, .wpcf7 input.outline[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.outline.button, .woocommerce-info a.outline.button {
   border-width: 2px;
   border-style: solid;
+}
+.btn.outline.opened, .wpcf7 input.outline.opened[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.outline.opened.button, .woocommerce-info a.outline.opened.button {
+  background-color: #317373;
+  color: white;
 }
 .btn.outline.light, .wpcf7 input.outline.light[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.outline.light.button, .woocommerce-info a.outline.light.button {
   border-color: white;
   color: white;
 }
 .btn.outline.light:hover, .wpcf7 input.outline.light[type=submit]:hover, .woocommerce-notices-wrapper .woocommerce-message a.outline.light.button:hover, .woocommerce-info a.outline.light.button:hover {
-  background-color: rgba(49, 115, 115, 0.2);
+  color: #317373;
+  border-color: white;
+  background-color: white;
 }
 .btn.outline.dark, .wpcf7 input.outline.dark[type=submit], .woocommerce-notices-wrapper .woocommerce-message a.outline.dark.button, .woocommerce-info a.outline.dark.button {
   border-color: #317373;
   color: #317373;
 }
 .btn.outline.dark:hover, .wpcf7 input.outline.dark[type=submit]:hover, .woocommerce-notices-wrapper .woocommerce-message a.outline.dark.button:hover, .woocommerce-info a.outline.dark.button:hover {
-  background-color: rgba(49, 115, 115, 0.2);
-  color: #2d4b58;
+  background-color: #317373;
+  color: white;
 }
 
 .top-bar {
@@ -15672,12 +15680,18 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 .top-bar p {
   margin-bottom: 0;
+  font-size: 1em;
 }
 
 .header {
   background-size: cover;
   position: relative;
   padding-top: 0.5em;
+}
+@media (min-width: 768px) {
+  .header__logo {
+    margin-left: 60px;
+  }
 }
 .header__brand {
   display: flex;
@@ -15730,7 +15744,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   text-transform: uppercase;
 }
 .header__cta__inner {
-  max-width: 1200px;
+  max-width: 1630px;
   margin: 0 auto;
 }
 .header__cta__inner > * {
@@ -15755,6 +15769,8 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 .header__cta p {
   margin-bottom: 0;
+  font-family: Letsgobrandon;
+  font-size: 1em;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -15762,7 +15778,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .edge {
-  max-width: 1200px;
+  max-width: 1630px;
   margin: 0 auto;
 }
 
@@ -15811,6 +15827,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   padding: 1em;
   display: flex !important;
   justify-content: center;
+}
+.slider--brands .slick-slide img {
+  max-height: 140px;
 }
 
 .padded .col-inner, .padded img {
@@ -15887,6 +15906,16 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   text-decoration: none;
   font-size: 2em;
 }
+@media (max-width: 768px) {
+  .footer-wrapper .back2top {
+    width: 52px;
+    height: 49px;
+  }
+  .footer-wrapper .back2top i {
+    position: relative;
+    left: 1px;
+  }
+}
 
 .site-footer {
   padding-bottom: 2em;
@@ -15896,6 +15925,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 @media (max-width: 768px) {
   .site-footer {
     padding: 2em;
+  }
+}
+.site-footer__address {
+  text-transform: uppercase;
+  margin-bottom: 1em;
+}
+@media (max-width: 768px) {
+  .site-footer__address {
+    margin-bottom: 2em;
   }
 }
 .site-footer a {
@@ -15927,7 +15965,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 .site-footer__cta__inner {
-  max-width: 1200px;
+  max-width: 1630px;
   margin: 0 auto;
 }
 .site-footer__cta__inner > * {
@@ -15971,10 +16009,17 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   text-align: center;
   float: left;
 }
+.site-footer .custom-menu-class li.current-menu-item a {
+  text-decoration: underline;
+}
 .site-footer .custom-menu-class a {
   color: white;
   text-decoration: none;
   padding: 0.7em;
+  text-transform: uppercase;
+}
+.site-footer .custom-menu-class a:hover {
+  text-decoration: underline;
 }
 .site-footer .socials {
   text-align: center;
@@ -16035,6 +16080,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   line-height: 1.4em;
   text-transform: uppercase;
   font-size: 1.1em;
+  color: #317373 !important;
+}
+.bubble p {
+  color: #676767 !important;
 }
 .bubble__inner {
   background-color: white;
@@ -16048,6 +16097,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 .bubble__color--white {
   color: white;
+}
+.bubble__color--white h5, .bubble__color--white .h5 {
+  color: white !important;
 }
 .bubble__color--white:hover {
   color: white;
@@ -16067,8 +16119,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 }
 
 .contact-form .wpforms-container {
-  max-width: 1200px;
+  max-width: 1630px;
   margin: 0 auto;
+}
+.contact-form p, .contact-form label, .contact-form p strong, .contact-form .wpforms-required-label {
+  color: white !important;
 }
 
 .terpene__intro {
@@ -16088,7 +16143,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   padding: 3em 0;
 }
 .terpene__container > .container {
-  max-width: 1200px;
+  max-width: 1630px;
   margin: 0 auto;
 }
 .terpene__screens {
@@ -16126,6 +16181,9 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   flex: 3;
   background-size: cover;
   padding: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 @media (max-width: 768px) {
   .terpene__screens__screen .screen__info {
@@ -16158,6 +16216,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   display: grid;
   margin-top: 2em;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 30px 10px;
 }
 @media (max-width: 768px) {
   .terpene__icons {
@@ -16173,7 +16232,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   text-align: center;
 }
 .terpene__icons img {
-  max-width: 150px;
+  max-width: 100px;
 }
 @media (max-width: 768px) {
   .terpene__icons img {
@@ -16222,7 +16281,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   align-items: center;
 }
 .full-slider__inner {
-  max-width: 1200px;
+  max-width: 1630px;
   margin: 0 auto;
   padding: 2em;
   display: flex;
@@ -16264,6 +16323,95 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 
 .slick-list {
   margin-bottom: 16px !important;
+}
+
+.dropdown-menu {
+  border: none;
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .dropdown-item {
+  color: #317373;
+  text-transform: uppercase;
+  font-size: 1.3em;
+}
+.navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .dropdown-item:hover {
+  background-color: white !important;
+}
+
+#menu-item-218, #menu-item-422 {
+  margin-left: 20px;
+}
+
+.boldme * {
+  font-family: Letsgobrandon !important;
+}
+
+.careers-cta {
+  margin: 0 auto !important;
+  padding: 3em 0;
+}
+@media (max-width: 768px) {
+  .careers-cta .col-md-6, .careers-cta .col-md-3 {
+    text-align: center;
+    padding: 0.9em 0;
+  }
+}
+.careers-cta img {
+  max-width: 150px;
+}
+.careers-cta h3, .careers-cta .h3 {
+  color: white;
+  text-transform: uppercase;
+  margin-bottom: 0;
+  font-size: 2em;
+}
+
+.w-100 .wp-block-group {
+  width: 100%;
+}
+
+.page-contained {
+  width: 100%;
+  max-width: 1630px;
+  margin: 0 auto !important;
+  padding: 3em 0;
+}
+@media (max-width: 1630px) {
+  .page-contained {
+    padding: 3em 3em;
+  }
+}
+
+.role__title {
+  display: flex;
+  align-items: center;
+}
+.role__title h4, .role__title .h4 {
+  margin-bottom: 0;
+  margin-left: 16px;
+  text-transform: uppercase;
+}
+.role__summary, .role__responsibilities {
+  margin-top: 32px;
+}
+.role__responsibilities img {
+  max-width: 150px;
+  padding: 1em;
+}
+.role__button {
+  display: flex;
+  margin-top: 32px;
+  align-items: center;
+}
+.role__button a {
+  min-width: 200px;
+}
+.role__button:before, .role__button:after {
+  content: "";
+  height: 2px;
+  width: 100%;
+  background-color: #317373;
+  display: block;
 }
 
 .has-blue-color,

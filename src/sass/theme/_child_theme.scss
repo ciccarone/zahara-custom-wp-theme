@@ -45,24 +45,33 @@ h1, h2, h3, h4 {
 }
 
 .btn {
+  text-transform: uppercase;
   border-radius: 0;
   transition: $trans;
+  font-family: Letsgobrandon;
   &.outline {
     border-width: 2px;
     border-style: solid;
+
+    &.opened  {
+      background-color: $blue--dark;
+      color: white;
+    }
     &.light {
       border-color: white;
       color: white;
       &:hover {
-        background-color: rgba($blue--dark, .2);
+        color: $blue--dark;
+        border-color: white;
+        background-color: white;
       }
     }
     &.dark {
       border-color: $blue--dark;
       color: $blue--dark;
       &:hover {
-        background-color: rgba($blue--dark, .2);
-        color: $blue--darkest;
+        background-color: $blue--dark;
+        color: white;
       }
     }
   }
@@ -79,12 +88,19 @@ h1, h2, h3, h4 {
   padding: .5em;
   p {
     margin-bottom: 0;
+    font-size: 1em;
   }
 }
 
 .header {
   background-size: cover;
   position: relative;
+
+  &__logo {
+    @media (min-width: $bp--md) {
+      margin-left: 60px;
+    }
+  }
   &__brand {
     display: flex;
     justify-content: space-between;
@@ -164,6 +180,8 @@ h1, h2, h3, h4 {
 
     p {
       margin-bottom: 0;
+      font-family: Letsgobrandon;
+      font-size: 1em;
     }
   }
 }
@@ -233,6 +251,9 @@ h1, h2, h3, h4 {
       padding: 1em;
       display: flex !important;
       justify-content: center;
+      img {
+        max-height: 140px;
+      }
     }
   }
 }
@@ -314,6 +335,15 @@ h1, h2, h3, h4 {
     background-color: $yellow;
     width: 75px;
     height: 75px;
+    @media (max-width: $bp--md) {
+      width: 52px;
+      height: 49px;
+      i {
+        position: relative;
+        left: 1px;
+      }
+    }
+
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -321,6 +351,7 @@ h1, h2, h3, h4 {
     z-index: 2;
     text-decoration: none;
     font-size: 2em;
+
   }
 }
 
@@ -330,6 +361,14 @@ h1, h2, h3, h4 {
   color: white;
   @media (max-width: $bp--md) {
     padding: 2em;
+  }
+  &__address {
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    @media (max-width: $bp--md) {
+      margin-bottom: 2em;
+    }
+
   }
   a {
     color: white;
@@ -400,11 +439,20 @@ h1, h2, h3, h4 {
     li {
       text-align: center;
       float: left;
+      &.current-menu-item {
+        a {
+          text-decoration: underline;
+        }
+      }
     }
     a {
       color: white;
       text-decoration: none;
       padding: .7em;
+      text-transform: uppercase;
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   .socials {
@@ -469,6 +517,11 @@ h1, h2, h3, h4 {
     line-height: 1.4em;
     text-transform: uppercase;
     font-size: 1.1em;
+    color: $primary !important;
+  }
+
+  p {
+    color: $grey-dark !important;
   }
 
   &__inner {
@@ -487,6 +540,9 @@ h1, h2, h3, h4 {
   &__color {
     &--white {
       color: white;
+      h5 {
+        color: white !important;
+      }
       &:hover {
         color: white;
       }
@@ -513,6 +569,10 @@ h1, h2, h3, h4 {
   .wpforms-container {
     max-width: $bp--xl;
     margin: 0 auto;
+  }
+  p, label, p strong, .wpforms-required-label {
+    color: white !important;
+
   }
 }
 
@@ -572,6 +632,9 @@ h1, h2, h3, h4 {
           flex: 3;
           background-size: cover;
           padding: 3em;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           @media (max-width: $bp--md) {
             padding: .5em;
             min-height: 400px;
@@ -606,6 +669,7 @@ h1, h2, h3, h4 {
     display: grid;
     margin-top: 2em;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 30px 10px;
     @media (max-width: $bp--md) {
       grid-template-columns: 1fr 1fr;
     }
@@ -618,7 +682,7 @@ h1, h2, h3, h4 {
       text-align: center;
     }
     img {
-      max-width: 150px;
+      max-width: 100px;
       @media (max-width: $bp--md) {
         max-width: 100px;
       }
@@ -722,4 +786,106 @@ h1, h2, h3, h4 {
 
 .slick-list {
   margin-bottom: 16px !important;
+}
+
+.dropdown-menu {
+  border: none;
+}
+
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav  .dropdown-item {
+  color: $primary;
+  text-transform: uppercase;
+  font-size: 1.3em;
+
+  &:hover {
+    background-color: white !important;
+  }
+}
+
+#menu-item-218, #menu-item-422 {
+  margin-left: 20px;
+}
+
+
+.boldme * {
+  font-family: Letsgobrandon !important;
+}
+
+
+.careers-cta {
+  margin: 0 auto !important;
+  padding: 3em 0;
+
+  @media (max-width: $bp--md) {
+    .col-md-6, .col-md-3 {
+      text-align: center;
+      padding: 0.9em 0;
+    }
+  }
+
+  img {
+    max-width: 150px;
+  }
+  h3 {
+    color: white;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    font-size: 2em;
+  }
+}
+
+.w-100 .wp-block-group {
+  width: 100%;
+}
+
+.page-contained {
+  width: 100%;
+  max-width: $bp--xl;
+  margin: 0 auto !important;
+  padding: 3em 0;
+
+  @media (max-width: $bp--xl) {
+    padding: 3em 3em;
+  }
+}
+
+.role {
+
+  &__title {
+    display: flex;
+    align-items: center;
+    h4 {
+      margin-bottom: 0;
+      margin-left: 16px;
+      text-transform: uppercase;
+    }
+  }
+
+  &__summary, &__responsibilities {
+    margin-top: 32px;
+  }
+  &__responsibilities {
+    img {
+      max-width: 150px;
+      padding: 1em;
+    }
+  }
+
+  &__button {
+    display: flex;
+    margin-top: 32px;
+    align-items: center;
+
+    a {
+      min-width: 200px;
+    }
+
+    &:before, &:after {
+      content: "";
+      height: 2px;
+      width: 100%;
+      background-color: $primary;
+      display: block;
+    }
+  }
 }
