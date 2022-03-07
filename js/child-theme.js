@@ -9306,9 +9306,9 @@
 	        var scroll = $(window).scrollTop();
 
 	        if (scroll >= 100) {
-	          header.removeClass('header__brand--sticky').addClass("header__brand--sticky");
+	          header.removeClass('header__brand--static').addClass("header__brand--sticky");
 	        } else {
-	          header.removeClass("header__brand--sticky").addClass('header__brand--sticky');
+	          header.removeClass("header__brand--sticky").addClass('header__brand--static');
 	        }
 	      });
 	    });
@@ -9330,7 +9330,7 @@
 	    function scrollToAnchor(aid) {
 	      var aTag = $("a[name='" + aid + "']");
 	      $('html,body').animate({
-	        scrollTop: aTag.offset().top
+	        scrollTop: aTag.offset().top - 100
 	      }, 'fast');
 	    }
 

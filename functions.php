@@ -333,7 +333,7 @@ function ways_to_consume()
 
 	$ret = '<div class="full-slider">';
 	while ( $loop->have_posts() ) : $loop->the_post();
-		$ret .= '<div class="full-slider__item" style="background-image: url('.get_the_post_thumbnail_url().')">';
+		$ret .= '<div class="full-slider__item" style="background-image: url('.get_the_post_thumbnail_url(null,'full').')">';
 			$ret .= '<div class="full-slider__inner">';
 				$ret .= '<div class="full-slider__title">';
 					$ret .= '<h4>WAYS TO CONSUME</h4>';

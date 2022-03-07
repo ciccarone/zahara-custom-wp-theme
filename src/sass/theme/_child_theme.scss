@@ -100,6 +100,9 @@ h1, h2, h3, h4 {
     @media (min-width: $bp--md) {
       margin-left: 60px;
     }
+    @media (max-width: $bp--md) {
+      margin-left: 25%;
+    }
   }
   &__brand {
     display: flex;
@@ -108,9 +111,33 @@ h1, h2, h3, h4 {
     margin: 0 auto;
 
     svg {
-      width: 300px;
+      width: 240px;
       @media (max-width: $bp--md) {
         width: 150px;
+      }
+    }
+
+    &--sticky {
+      position: fixed;
+      z-index: 9999;
+      background-color: white;
+      max-width: 100%;
+      width: 100%;
+      top: 0;
+      height: 100px;
+
+      .e414806f-b83d-4a25-9653-9895b610dfea {
+        fill: $primary;
+      }
+      .header__blank {
+        display: none;
+      }
+      .header__nav {
+        display: flex;
+      }
+
+      svg {
+        width: 140px;
       }
     }
   }
@@ -119,7 +146,7 @@ h1, h2, h3, h4 {
   &__size {
 
     &--large {
-      min-height: 95vh;
+      min-height: 110vh;
       @media (max-width: $bp--md) {
         min-height: 82vh;
       }
@@ -132,6 +159,7 @@ h1, h2, h3, h4 {
       min-height: 75vh;
       @media (max-width: $bp--md) {
         min-height: 32vh;
+        // margin-bottom: 5em;
       }
     }
   }
@@ -143,6 +171,7 @@ h1, h2, h3, h4 {
     width: 100%;
     padding: 1em;
     font-size: 3em;
+
     @media (max-width: $bp--md) {
       font-size: 1.5em;
     }
@@ -153,6 +182,7 @@ h1, h2, h3, h4 {
       font-family: Letsgobrandon;
       padding-top: 0;
       text-transform: uppercase;
+          letter-spacing: 4px;
     }
 
     &__inner {
@@ -211,6 +241,7 @@ h1, h2, h3, h4 {
 .slider {
   display: flex !important;
   align-items: center;
+  padding: 2em;
   a {
     display: flex;
     flex-direction: column;
@@ -286,6 +317,9 @@ h1, h2, h3, h4 {
   > div {
     flex: 1;
     margin-left: 0 !important;
+    @media (max-width: $bp--xl) {
+      // margin-bottom: 2em;
+    }
   }
 
   h2 {
@@ -310,7 +344,7 @@ h1, h2, h3, h4 {
     flex-direction: row-reverse;
 
     &--mobile {
-      @media (max-width: 768px) {
+      @media (max-width: $bp--xl) {
         flex-direction: column-reverse;
       }
     }
@@ -365,6 +399,8 @@ h1, h2, h3, h4 {
   &__address {
     text-transform: uppercase;
     margin-bottom: 1em;
+    font-family: Letsgobrandon;
+    font-size: 1.1em;
     @media (max-width: $bp--md) {
       margin-bottom: 2em;
     }
@@ -466,6 +502,8 @@ h1, h2, h3, h4 {
 
   small {
     margin-top: 32px;
+    padding: 1em;
+    font-size: 0.8em;
     p {
       text-align: left;
       font-size: .9em;
@@ -569,6 +607,10 @@ h1, h2, h3, h4 {
   .wpforms-container {
     max-width: $bp--xl;
     margin: 0 auto;
+    @media (min-width: $bp--xl) {
+      padding: 3em;
+    }
+
   }
   p, label, p strong, .wpforms-required-label {
     color: white !important;
@@ -692,6 +734,9 @@ h1, h2, h3, h4 {
   &__effects {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    @media (min-width: $bp--md) {
+      padding: 0 90px;
+    }
     @media (max-width: $bp--md) {
       grid-template-columns: 1fr;
       padding: 1em;
@@ -730,10 +775,10 @@ h1, h2, h3, h4 {
   width: 100%;
 
   &__item {
-    min-height: 600px !important;
+    min-height: 480px !important;
     display: flex !important;
     align-items: center;
-
+  background-size: cover;
   }
 
   &__inner {
@@ -795,7 +840,7 @@ h1, h2, h3, h4 {
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav  .dropdown-item {
   color: $primary;
   text-transform: uppercase;
-  font-size: 1.3em;
+  font-size: 1.1em;
 
   &:hover {
     background-color: white !important;
@@ -851,6 +896,12 @@ h1, h2, h3, h4 {
 
 .role {
 
+  &__icon {
+    img {
+      max-width: 70px;
+    }
+  }
+
   &__title {
     display: flex;
     align-items: center;
@@ -875,6 +926,9 @@ h1, h2, h3, h4 {
     display: flex;
     margin-top: 32px;
     align-items: center;
+    @media (max-width: $bp--xl) {
+      margin-bottom: 3em;
+    }
 
     a {
       min-width: 200px;
@@ -888,4 +942,113 @@ h1, h2, h3, h4 {
       display: block;
     }
   }
+}
+
+.navbar-light .navbar-toggler {
+    border: none;
+}
+
+
+.offcanvas-body {
+  padding: 1rem 2.2rem;
+}
+
+
+#sb_instagram {
+  max-width: $bp--xl;
+  margin: 0 auto;
+}
+
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0 !important;
+}
+
+
+.small-image {
+  max-width: 410px;
+}
+
+
+.happy {
+  background-image: url('/wp-content/uploads/2022/02/happy.jpg');
+}
+
+.coast {
+  background-image: url('/wp-content/uploads/2022/02/coast-1.jpg');
+}
+
+.twofivethree {
+  background-image: url('/wp-content/uploads/2022/02/253-1.jpg');
+}
+
+.incredibles {
+  background-image: url('/wp-content/uploads/2022/02/incredibles.jpg');
+}
+
+.brand-hover {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  .col-inner {
+    visibility: hidden;
+    position: relative;
+  }
+
+
+  &:hover {
+    &:after {
+      position: absolute;
+      content: "";
+      background-color: rgba(255,255,255,.8);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .col-inner {
+      visibility: visible;
+      z-index: 2;
+    }
+  }
+
+  &--active {
+    &:after {
+      position: absolute;
+      content: "";
+      background-color: rgba(255,255,255,.8);
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    .col-inner {
+      visibility: visible;
+      z-index: 2;
+    }
+  }
+
+  // @media (max-width: $bp--md) {
+  //   &:after {
+  //     position: absolute;
+  //     content: "";
+  //     background-color: rgba(255,255,255,.8);
+  //     top: 0;
+  //     right: 0;
+  //     bottom: 0;
+  //     left: 0;
+  //   }
+  //   .col-inner {
+  //     visibility: visible;
+  //     z-index: 2;
+  //   }
+  // }
+}
+
+
+.offcanvas-header {
+  top: 60px;
+position: relative;
+width: fit-content;
+right: -80%;
 }
