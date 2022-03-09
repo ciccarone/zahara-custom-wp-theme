@@ -15686,7 +15686,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
 .header {
   background-size: cover;
   position: relative;
-  padding-top: 0.5em;
 }
 @media (min-width: 768px) {
   .header__logo {
@@ -15699,9 +15698,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   }
 }
 .header__brand {
-  display: flex;
   justify-content: space-between;
-  max-width: 90%;
   margin: 0 auto;
 }
 .header__brand svg {
@@ -15712,26 +15709,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
     width: 150px;
   }
 }
-.header__brand--sticky {
-  position: fixed;
-  z-index: 9999;
-  background-color: white;
-  max-width: 100%;
-  width: 100%;
+.header__brand--sticky .navbar {
   top: 0;
-  height: 100px;
-}
-.header__brand--sticky .e414806f-b83d-4a25-9653-9895b610dfea {
-  fill: #317373;
-}
-.header__brand--sticky .header__blank {
-  display: none;
-}
-.header__brand--sticky .header__nav {
-  display: flex;
-}
-.header__brand--sticky svg {
-  width: 140px;
+  width: 100%;
+  position: fixed;
 }
 .header__size--large {
   min-height: 110vh;
@@ -16381,10 +16362,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   background-color: white !important;
 }
 
-#menu-item-218, #menu-item-422 {
-  margin-left: 20px;
-}
-
 .boldme * {
   font-family: Letsgobrandon !important;
 }
@@ -16545,6 +16522,61 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4 {
   width: -moz-fit-content;
   width: fit-content;
   right: -80%;
+}
+
+.navbar {
+  background-color: white;
+  padding: 1em 4em;
+  z-index: 99;
+}
+@media (max-width: 1442px) {
+  .navbar {
+    padding: 1em 2em;
+  }
+}
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1em;
+  }
+}
+.navbar .socials {
+  font-size: 2em;
+}
+@media (min-width: 768px) {
+  .navbar .socials {
+    margin-left: 4em;
+  }
+}
+@media (max-width: 1442px) {
+  .navbar .socials {
+    margin-left: 2em;
+  }
+}
+@media (max-width: 1200px) {
+  .navbar .socials {
+    margin-left: 0.5em;
+  }
+}
+@media (max-width: 768px) {
+  .navbar .socials {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .navbar .nav-link {
+    padding-right: 1.9rem !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1314px) {
+  .navbar .nav-link {
+    font-size: 1em !important;
+    padding-right: 1.5rem !important;
+  }
+}
+@media (min-width: 768px) {
+  .navbar .dropdown-item {
+    font-size: 1em !important;
+  }
 }
 
 .has-blue-color,

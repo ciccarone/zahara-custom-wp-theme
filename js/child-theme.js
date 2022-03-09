@@ -9299,6 +9299,32 @@
 	// Add your custom JS here.
 	jQuery(document).ready(function ($) {
 	  $(document).ready(function () {
+	    if (window.innerWidth > 992) {
+	      $('#menu-item-dropdown-220').click(function () {
+	        window.location.href = "/about";
+	      });
+	      document.querySelectorAll('.navbar .nav-item').forEach(function (everyitem) {
+	        everyitem.addEventListener('mouseover', function (e) {
+	          let el_link = this.querySelector('a[data-bs-toggle]');
+
+	          if (el_link != null) {
+	            let nextEl = el_link.nextElementSibling;
+	            el_link.classList.add('show');
+	            nextEl.classList.add('show');
+	          }
+	        });
+	        everyitem.addEventListener('mouseleave', function (e) {
+	          let el_link = this.querySelector('a[data-bs-toggle]');
+
+	          if (el_link != null) {
+	            let nextEl = el_link.nextElementSibling;
+	            el_link.classList.remove('show');
+	            nextEl.classList.remove('show');
+	          }
+	        });
+	      });
+	    }
+
 	    $(function () {
 	      //caches a jQuery object containing the header element
 	      var header = $(".header__brand");
@@ -9312,6 +9338,13 @@
 	        }
 	      });
 	    });
+
+	    if ($('.brand-hover').length > 0) {
+	      $('.brand-hover').click(function () {
+	        $(this).toggleClass('.brand-hover--active');
+	      });
+	    }
+
 	    $('.role__button a').click(function (e) {
 	      e.preventDefault();
 	      var this_btn = $(this);

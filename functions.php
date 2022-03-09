@@ -355,20 +355,20 @@ add_shortcode('ways_to_consume', 'ways_to_consume');
 
 function careers_cta()
 {
-	$ret = '<div class="container careers-cta">';
-		$ret .= '<div class="row">';
-			$ret .= '<div class="col-md-6">';
-				$ret .= '<h3>View Our Positions</h3>';
-			$ret .= '</div>';
-			$ret .= '<div class="col-md-3">';
-				$ret .= '<a href="#"><img src="/wp-content/uploads/2022/02/linkedin.png" /></a>';
-			$ret .= '</div>';
-			$ret .= '<div class="col-md-3">';
-				$ret .= '<a href="#"><img src="/wp-content/uploads/2022/02/indeed.png" /></a>';
-			$ret .= '</div>';
-		$ret .= '</div>';
-	$ret .= '</div>';
-	return $ret;
+	// $ret = '<div class="container careers-cta">';
+	// 	$ret .= '<div class="row">';
+	// 		$ret .= '<div class="col-md-6">';
+	// 			$ret .= '<h3>View Our Positions</h3>';
+	// 		$ret .= '</div>';
+	// 		$ret .= '<div class="col-md-3">';
+	// 			$ret .= '<a href="#"><img src="/wp-content/uploads/2022/02/linkedin.png" /></a>';
+	// 		$ret .= '</div>';
+	// 		$ret .= '<div class="col-md-3">';
+	// 			$ret .= '<a href="#"><img src="/wp-content/uploads/2022/02/indeed.png" /></a>';
+	// 		$ret .= '</div>';
+	// 	$ret .= '</div>';
+	// $ret .= '</div>';
+	// return $ret;
 }
 
 add_shortcode('careers_cta', 'careers_cta');
@@ -408,13 +408,13 @@ function careers()
 				$ret .= get_field('job_responsibilities');
 
 				if (get_field('job_linkedin_url') || get_field('job_indeed_url')) {
-					$ret .= '<h4>YOU CAN ALSO APPLY AT</h4>';
-					if ($li = get_field('job_linkedin_url')) {
-						$ret .= '<a href="'.get_field('job_linkedin_url').'"><img src="/wp-content/uploads/2022/02/Linked-In-Green.png" /></a>';
-					}
-					if ($li = get_field('job_indeed_url')) {
-						$ret .= '<a href="'.get_field('job_indeed_url').'"><img src="/wp-content/uploads/2022/02/Indeed-Green.png" /></a>';
-					}
+					// $ret .= '<h4>YOU CAN ALSO APPLY AT</h4>';
+					// if ($li = get_field('job_linkedin_url')) {
+					// 	$ret .= '<a href="'.get_field('job_linkedin_url').'"><img src="/wp-content/uploads/2022/02/Linked-In-Green.png" /></a>';
+					// }
+					// if ($li = get_field('job_indeed_url')) {
+					// 	$ret .= '<a href="'.get_field('job_indeed_url').'"><img src="/wp-content/uploads/2022/02/Indeed-Green.png" /></a>';
+					// }
 				}
 			$ret .= '</div>';
 			$ret .= '<div class="role__button">';
