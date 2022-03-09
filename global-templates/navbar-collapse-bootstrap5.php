@@ -65,7 +65,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 		);
 		?>
 
-    <div class="socials"><a href="https://www.instagram.com/zahara.life/"><i class="fab fa-instagram" aria-hidden="true"></i></a></div>
+    <div class="socials"><a href="https://www.instagram.com/zahara.life/"><i class="fab fa-instagram" aria-hidden="true"></i></a> <a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></div>
 	</div><!-- .container(-fluid) -->
 
 </nav><!-- .site-navigation -->

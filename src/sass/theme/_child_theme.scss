@@ -842,7 +842,7 @@ h1, h2, h3, h4 {
 .navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav  .dropdown-item {
   color: $primary;
   text-transform: uppercase;
-  font-size: 1.1em;
+  font-size: 1em;
 
   &:hover {
     background-color: white !important;
@@ -1067,7 +1067,7 @@ right: -80%;
     padding: 1em;
   }
   .socials {
-    font-size: 2em;
+    font-size: 1.4em;
 
     @media (min-width: $bp--md) {
       margin-left: 4em;
@@ -1086,6 +1086,9 @@ right: -80%;
   @media (min-width: $bp--md) {
     .nav-link {
           padding-right: 1.9rem !important;
+          &:hover {
+            text-decoration: underline;
+          }
           @media (max-width: 1314px) {
             font-size: 1em !important;
             padding-right: 1.5rem !important;
@@ -1095,4 +1098,19 @@ right: -80%;
       font-size: 1em !important;
     }
   }
+}
+
+
+.dropdown-menu {
+  background-color: rgba(255,255,255,.8);
+  @media (min-width: $bp--md) {
+    padding: 2rem 0 0;
+  }
+
+}
+
+.dropdown-item {
+  text-transform: none !important;
+  color: $grey-dark !important;
+  padding: 1em 1em;
 }
